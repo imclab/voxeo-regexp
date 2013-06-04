@@ -1,0 +1,32 @@
+CUSTOM CHANGES (from v 1.1.3, Jun. 2001):
+- Removed the following items in the original source structure
+	gnu-regexp
+		docs 										removed
+		lib											removed
+		src											removed (only part of subtree retained)
+			gnu										retained
+				regexp								retained (contents retained, unless specified as removed)
+					util							removed (including the following source files - Egrep.java, Grep.java, GrepUsage.txt, REApplet.java, RETest.java, Tests.java)
+					MessagesBundle_fr.properties	removed
+					REFilterInputStream.java		removed
+					REFilterReader.java				removed
+					UncheckedRE.java				removed
+			Makefile								removed
+		CONTENTS									removed
+		COPYING										removed
+		COPYING.LIB									removed
+		README										removed
+		TODO										removed
+
+- Modifications:
+	- double line feeds added in some source files (likely, accidental)
+	- Added serialVersionUID's to fix Eclipse warnings.	
+	- renamed variables (index->ix)
+	- renamed variables (next->nxt)
+	- fixed warnings related to inline assignments
+	- replaced generic containers with template containers (Vector vs Vector<REToken>)		
+	- removed 'switch' case fall-throughs.
+	- change in RE.java (removed unused variable)
+		-	currentToken = new RETokenBackRef(subIndex,Character.digit(unit.ch,10),insens);
+		+	currentToken = new RETokenBackRef(subIndex,Character.digit(unit.ch,10));
+	- removed unnecessary casts
